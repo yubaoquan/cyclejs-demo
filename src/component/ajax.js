@@ -10,10 +10,13 @@ import { div, button } from '@cycle/dom'
 
 function model(sources) {
     return sources.HTTP.select(`users`)
+        .map(response$ =>
+            response$.replaceError(() => xs.of('newwork error'))
+        )
         .flatten()
         .map(res => {
-            console.info(`res`, res.body)
-            return { data: res.body }
+            console.info(`res`, res)
+            return { data: res.body ? res.body : 'error' }
         })
 }
 
