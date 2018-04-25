@@ -8,19 +8,19 @@ export default {
     banners: window.banners,
     modules: [
         {
-            name: `话费流量`,
+            name: `Tab-a`,
             class: `icon-1`,
             module: `Phone`,
         }, {
-            name: `游戏点卡`,
+            name: `Tab-b`,
             class: `icon-2`,
             module: `Card`,
         }, {
-            name: `视频充值`,
+            name: `Tab-c`,
             class: `icon-4`,
             module: `Video`,
         }, {
-            name: `AppStore<br>充值码`,
+            name: `AppStore<br>recharge`,
             class: `icon-3`,
             fontClass: `appstore`,
             module: `AppStore`,

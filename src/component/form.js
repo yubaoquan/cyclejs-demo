@@ -56,7 +56,7 @@ function model(props$, actions$) {
                     // console.info('change age');
                     break
                 case `submit`:
-                    console.info(`提交: 在表单组件内部进行校验`)
+                    console.info(`submit: validate inside form component`)
                     props.needName = !props.name
                     props.needAge = props.age == null || props.age === ``
                     break
@@ -100,7 +100,7 @@ function view(state$, sources) {
                             }),
                             state.needName ? span({
                                 style: errorTipsStyle,
-                            }, `请填写姓名`) : null,
+                            }, `please input name`) : null,
                         ]),
                     ]),
                     div([
@@ -116,7 +116,7 @@ function view(state$, sources) {
                             }),
                             state.needAge ? span({
                                 style: errorTipsStyle,
-                            }, `请填写年龄`) : null,
+                            }, `please input age`) : null,
                         ]),
                     ]),
                     button(`.submit`, {
@@ -129,11 +129,11 @@ function view(state$, sources) {
                         attrs: {
                             type: `button`,
                         },
-                    }, `提交`),
+                    }, `submit`),
                 ]),
                 div([
-                    p(`姓名:` + state.form.name),
-                    p(`年龄:` + state.form.age),
+                    p(`name:${ state.form.name}`),
+                    p(`age:${ state.form.age}`),
                 ]),
             ])
         })

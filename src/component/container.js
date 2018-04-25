@@ -68,7 +68,7 @@ export default function main(sources) {
         DOM: sources.DOM,
         props$: sources.props$.map(props => {
             return Object.assign({
-                btnName: `按钮1`,
+                btnName: `button-1`,
                 text: props.fooData.text,
                 type: 1,
                 color: `green`,
@@ -82,7 +82,7 @@ export default function main(sources) {
         DOM: sources.DOM,
         props$: sources.props$.map(props => {
             return Object.assign({
-                btnName: `按钮2`,
+                btnName: `button-2`,
                 text: props.fooData.text2,
                 type: 2,
             }, props)

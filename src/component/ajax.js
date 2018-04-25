@@ -28,7 +28,7 @@ function view(state$, sources) {
                         border: `1px solid black`,
                         borderRadius: `5px`,
                     },
-                }, `发请求`),
+                }, `send request`),
                 state.data ? div(`.result`, JSON.stringify(state.data)) : null,
             ])
         )
@@ -37,7 +37,7 @@ function view(state$, sources) {
 export default function main(sources) {
     const actions$ = sources.DOM.select(`.req-btn`).events(`click`)
         .map(() => {
-            console.info(`send ajax`)
+            console.info(`ajax`)
             return {
                 url: `https://jsonplaceholder.typicode.com/users/1`,
                 category: `users`,
