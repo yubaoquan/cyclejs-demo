@@ -6,22 +6,36 @@
 
 import xs from 'xstream'
 
-import { div, button } from '@cycle/dom'
+import { div, button, p } from '@cycle/dom'
 
 function model(sources) {
-    return sources.HTTP.select(`users`)
+    const user1$ = sources.HTTP.select(`users`)
         .map(response$ =>
-            response$.replaceError(() => xs.of('newwork error'))
+            response$.replaceError(() => xs.of('nework error'))
         )
         .flatten()
-        .map(res => {
-            console.info(`res`, res)
-            return { data: res.body ? res.body : 'error' }
-        })
+
+    const user2$ = sources.HTTP.select(`users2`)
+        .map(response$ =>
+            response$.replaceError(() => xs.of('nework error'))
+        )
+        .flatten()
+
+    return xs.combine(user1$, user2$).map(([res1, res2]) => {
+        console.info(`res1`, res1)
+        console.info(`res2`, res2)
+        return {
+            data1: res1.body ? res1.body : 'error',
+            data2: res2.body ? res2.body : 'error',
+        }
+    })
 }
 
 function view(state$, sources) {
-    return state$.startWith({ data: null })
+    return state$.startWith({
+        data1: null,
+        data2: null,
+    })
         .map(state =>
             div([
                 button(`.req-btn`, {
@@ -32,18 +46,35 @@ function view(state$, sources) {
                         borderRadius: `5px`,
                     },
                 }, `send request`),
-                state.data ? div(`.result`, JSON.stringify(state.data)) : null,
+                p({}, 'user1'),
+                state.data1 ? div(`.result`, JSON.stringify(state.data1)) : null,
+                p({}, 'user2'),
+                state.data2 ? div(`.result`, JSON.stringify(state.data2)) : null,
             ])
         )
 }
 
 export default function main(sources) {
-    const actions$ = sources.DOM.select(`.req-btn`).events(`click`)
+    const request1$ = sources.DOM.select(`.req-btn`).events(`click`)
         .map(() => {
             console.info(`ajax`)
             return {
                 url: `https://jsonplaceholder.typicode.com/users/1`,
                 category: `users`,
+                method: `GET`,
+            }
+        })
+
+    const request2$ = sources.HTTP.select(`users`)
+        .map(response$ =>
+            response$.replaceError(() => xs.of('newwork error'))
+        )
+        .flatten()
+        .map(res => {
+            console.info(`second request`)
+            return {
+                url: `https://jsonplaceholder.typicode.com/users/2`,
+                category: `users2`,
                 method: `GET`,
             }
         })
@@ -54,6 +85,6 @@ export default function main(sources) {
         value: xs.of({
             type: `ajax`,
         }),
-        HTTP: actions$,
+        HTTP: xs.merge(request1$, request2$),
     }
 }
