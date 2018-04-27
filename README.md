@@ -3,8 +3,8 @@ Some small demos using cyclejs
 
 ### install
 
-install puer so that you can view the page as from server, this will avoid getting the error `Origin null is not allowed by Access-Control-Allow-Origin
-` when demo sending an http request while you view the demo page just from file system.
+<del> install puer so that you can view the page as from server, this will avoid getting the error `Origin null is not allowed by Access-Control-Allow-Origin
+` when demo sending an http request while you view the demo page just from file system. </del>
 
 > npm install -g puer
 
