@@ -39,3 +39,6 @@ I don't know yet, there can be come implementations which are not well designed 
 ### Feedback
 
 If you have any questions or find any bugs, please make an issue in this repo. Thank you.
+
+### slide
+[slide](https://slides.com/fuucker/deck-1/live#/)

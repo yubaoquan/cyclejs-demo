@@ -53,6 +53,7 @@ function view(state$, sinks) {
 
 
 export default function main(sources) {
+    // https://cycle.js.org/api/isolate.html#api-isolatecomponent-scope
     const Tab1 = isolate(Tab, `tab`)
 
     const tabSink = Tab1({

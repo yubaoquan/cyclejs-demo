@@ -32,7 +32,10 @@ function model(props$, actions$) {
             props.currentTab = props.tabs[activeIndex]
             return props
         })
-    }).flatten().remember()
+    })
+        .flatten() // comment this line to see the error
+        // http://staltz.github.io/xstream/#remember
+        .remember() // comment this line to see the white screen
 }
 
 function view(state$) {
