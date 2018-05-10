@@ -16,17 +16,14 @@ import Form from './form'
 import Ajax from './ajax'
 
 function model(props$, sinks, initData) {
-    const value$ = xs.merge.apply(null,
-        sinks.map(sink => {
-            return sink.value
-        })
-    )
+    const value$ = xs.merge(...sinks.map(sink => sink.value))
 
-    return value$.map(msg => {
-        return props$.map(props => {
-            return reducer(props, msg)
-        })
-    }).flatten().startWith(initData)
+    return value$.map(
+        msg => props$.map(
+            props => reducer(props, msg)
+        )
+    )
+        .flatten().startWith(initData)
 }
 
 function view(state$, sinks) {

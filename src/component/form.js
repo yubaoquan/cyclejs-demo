@@ -64,7 +64,7 @@ function model(props$, actions$) {
                     break
             }
             return {
-                msgType: msg.type === `submit` ? `submit` : ``,
+                msgType: msg.type === `submit` ? `submit` : ``, // 给 reducer 用
                 form: {
                     name: props.name,
                     age: props.age,
