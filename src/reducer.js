@@ -5,6 +5,8 @@
  */
 export default function reducer(props, msg) {
     console.info(msg)
+    console.info('==== props ====')
+    console.info(props)
     const msgValue = msg.value
     if (msg.type === 1) {
         console.info(`message comming from foo component1:${ msgValue}`)
