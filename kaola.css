@@ -1,0 +1,53 @@
+.kaola {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3D(-50%, -50%, 0);
+}
+.face {
+    width: 90px;
+    height: 90px;
+    background-color: red;
+    border-radius: 50%;
+}
+.ear {
+    border-radius: 50%;
+    position: absolute;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    top: -5px;
+}
+.left-ear {
+    left: -28px;
+}
+.right-ear {
+    right: -28px;
+}
+.eye {
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    z-index: 1;
+}
+.left-eye {
+    left: 20px;
+}
+.right-eye {
+    right: 20px;
+}
+.nose {
+    width: 16px;
+    height: 30px;
+    top: 40px;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    z-index: 1;
+}
