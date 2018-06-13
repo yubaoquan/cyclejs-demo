@@ -193,8 +193,6 @@
         // 禁止使用未声明的变量
         "no-undef": "error",
         "arrow-spacing": "error",
-        // let和const优先使用const
-        "prefer-const": "error",
         // 注释双斜杠后加一个空格, ----和++++例外
         "spaced-comment": [
             "error",
