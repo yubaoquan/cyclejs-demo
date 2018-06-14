@@ -64,43 +64,43 @@
 }
 
 [data-speed="1"] {
-    animation-duration: 100ms;
+    animation-duration: 1000ms;
 }
 
 [data-speed="2"] {
-    animation-duration: 200ms;
-}
-
-[data-speed="3"] {
-    animation-duration: 300ms;
-}
-
-[data-speed="4"] {
-    animation-duration: 400ms;
-}
-
-[data-speed="5"] {
-    animation-duration: 500ms;
-}
-
-[data-speed="6"] {
-    animation-duration: 600ms;
-}
-
-[data-speed="7"] {
-    animation-duration: 700ms;
-}
-
-[data-speed="8"] {
-    animation-duration: 800ms;
-}
-
-[data-speed="9"] {
     animation-duration: 900ms;
 }
 
+[data-speed="3"] {
+    animation-duration: 800ms;
+}
+
+[data-speed="4"] {
+    animation-duration: 700ms;
+}
+
+[data-speed="5"] {
+    animation-duration: 600ms;
+}
+
+[data-speed="6"] {
+    animation-duration: 500ms;
+}
+
+[data-speed="7"] {
+    animation-duration: 400ms;
+}
+
+[data-speed="8"] {
+    animation-duration: 300ms;
+}
+
+[data-speed="9"] {
+    animation-duration: 200ms;
+}
+
 [data-speed="10"] {
-    animation-duration: 1000ms;
+    animation-duration: 100ms;
 }
 
 .nose {

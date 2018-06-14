@@ -7,11 +7,11 @@
     nose.addEventListener('click', changeEyeSpeed)
 
     function changeEyeSpeed() {
-        let speed = +leftEye.dataset.speed || 0
+        let speed = +leftEye.dataset.speed
         speed++
         speed %= 11
         leftEye.dataset.speed = speed
         rightEye.dataset.speed = speed
-        status.textContent = `${ 10 - speed }`
+        status.textContent = `${ speed }`
     }
 }())

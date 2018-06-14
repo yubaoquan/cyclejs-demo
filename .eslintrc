@@ -262,10 +262,6 @@
                 "allowParens": true
             }
         ],
-        "arrow-parens": [
-            "warn",
-            "as-needed"
-        ],
         "no-var": "error",
         "no-const-assign": "error",
         "no-multi-spaces": "error",
